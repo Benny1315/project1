@@ -1,6 +1,6 @@
 clear; close all;
 
-H2S = readmatrix('H2S\28_02_2023-D-169212-H2S-100m-Gain80-0.8OD.xlsx');
+H2S = readmatrix('fileName.xlsx');
 Wavelength = 1:256;
 
 DXXXby0ppm = SetTheDatamlx(H2S);
