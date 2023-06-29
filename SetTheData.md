@@ -1,9 +1,9 @@
-# Matlab code, which organizes the data,
-# downloads the dark measurement and normalizes according to the absorption graph.
+% Matlab code, which organizes the data,
+% downloads the dark measurement and normalizes according to the absorption graph.
 function M = SetTheData(Matrix)
 
-# If the number of empty lines is 5, it does not include 50&200.
-# And if the number of lines is 7, then it is inclusive.
+% If the number of empty lines is 5, it does not include 50&200.
+% And if the number of lines is 7, then it is inclusive.
 c = find(isnan(Matrix(:,1)));
 
 
@@ -18,11 +18,11 @@ con300ppm = meanDark - Matrix(c(4)+1:c(5)-1,7:262); % Dark - Matrix of 300ppm
 M{2} = con300ppm(:,:)./con0ppmmean;   % Normelaized
 
 if (length(c) == 5)     % checking if the Exel including 50&200 ppm or not
-#                  not including 50&200ppm
+                 % not including 50&200ppm
     con500ppm = meanDark - Matrix(c(5)+1:end,7:262); % Dark - Matrix of 500ppm 
     M{3} = con500ppm(:,:)./con0ppmmean;  % Normelaized
 
-#                 % including 50&200ppm
+                 % including 50&200ppm
 elseif (length(c) == 7)
     con500ppm = meanDark - Matrix(c(5)+1:c(6)-1,7:262); % Dark - Matrix of 500ppm 
     M{3} = con500ppm(:,:)./con0ppmmean;   % Normelaized
