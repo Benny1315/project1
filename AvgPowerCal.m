@@ -1,3 +1,5 @@
+% Calculation of the power utilization after filtering
+
 function AvgAhuzP = AvgPowerCal(before, after)
 Pbefore = sum(before(:,:).^2,2);
 Pafter = sum(after(:,:).^2,2);
